@@ -1,8 +1,0 @@
-LICENSE
-README.md
-setup.py
-HunterPass.egg-info/PKG-INFO
-HunterPass.egg-info/SOURCES.txt
-HunterPass.egg-info/dependency_links.txt
-HunterPass.egg-info/entry_points.txt
-HunterPass.egg-info/top_level.txt

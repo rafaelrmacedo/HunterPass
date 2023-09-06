@@ -1,7 +1,7 @@
 import argparse
 
-def main():
 
+def main():
     print('''
      _    _   _   _    _     _   _______   _______   ______         
     | |  | | | |  | | | |   | | |__   __| |  _____| |  __  |
@@ -18,7 +18,10 @@ def main():
 
     ''')
 
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+                    prog='HunterPass',
+                    description='Automatic dictionary generator with AI',
+                    epilog='Text at the bottom of help')
     parser.parse_args()
 
 
