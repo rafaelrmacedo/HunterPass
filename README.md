@@ -1,12 +1,6 @@
 # HunterPass
 HunterPass is a tool for help the students to learn about dictionary attacks. This will be made especifically for IFSul - Campus Sapiranga students, but any one can use it.
 
-## Dependencies
-Install the setup.py to install all dependencies.
+## How to install the project
 
-## How to Build the Project
-### Linux 🐧 or MacOS 🍎
-- Run the build.sh file
-
-### Windows 
-- Run the build.bat file
+- Run `pip install hunterpass`
