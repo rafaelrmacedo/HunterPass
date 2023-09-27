@@ -1,2 +1,0 @@
-os.path=3.8
-argparse=3.2

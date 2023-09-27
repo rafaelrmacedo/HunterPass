@@ -15,12 +15,12 @@ setup(
     long_description_content_type="text/markdown",
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
-    install_requires=[''],  # packages that requires to project work correctly
+    install_requires=['os.path', 'argparse'],  # packages that requires to project work correctly
     keywords=['python', 'dictionary', 'generate', 'llm', 'security', 'hashes', 'hash', 'cybersecurity', 'cyber',
               'hacking', ],
     classifiers=[
         "Development Status :: 1 - Planning",
-        "Intended Audience :: Cyber security students and professionals",
+        "Intended Audience :: Developers",
         "Programming Language :: Python :: 3",
         "Operating System :: Unix",
         "Operating System :: MacOS :: MacOS X",
