@@ -1,5 +1,5 @@
 import argparse
-
+from generate import generate_wordlist
 
 def main():
     print('''
@@ -15,15 +15,19 @@ def main():
             |  ____| |  __  |   \__ \    \__ \ 
             | |      | |  | |  ____\ \   ___\ \ 
             |_|      |_|  |_| |_______| |______|    
-
     ''')
 
     parser = argparse.ArgumentParser(
-                    prog='HunterPass',
+                    prog='hunterpass',
                     description='Automatic dictionary generator with AI',
                     epilog='Text at the bottom of help')
-    parser.parse_args()
+    
+    parser.add_argument('-s', '--save', metavar='output_file', required=False, 
+                        help='Save the generated wordlist to a file')
 
+    args = parser.parse_args()
+
+    generate_wordlist(args.save)
 
 if __name__ == '__main__':
     main()
