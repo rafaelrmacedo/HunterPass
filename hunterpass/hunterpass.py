@@ -17,8 +17,6 @@ def main():
             |_|      |_|  |_| |_______| |______|    
     ''')
 
-    args = parser.parse_args()
-
     parser = argparse.ArgumentParser(
                     prog='hunterpass',
                     description='Automatic dictionary generator with AI',

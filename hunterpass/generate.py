@@ -4,7 +4,17 @@ import os
 def get_api_key():
     return os.getenv('OPENAI_API_KEY')
 
-def get_user_input():
+def generate_wordlist(output_file="dictionary.txt"):
+    api_key = get_api_key()
+
+    if api_key is None:
+        print("Error: API key not found. Please, set OPENAI_API_KEY environment variable.")
+        return
+
+    openai.api_key = api_key
+
+    initial_message = "Generate a wordlist with the following information (100 variations):\n"
+
     user_input = []
 
     while True:
@@ -13,30 +23,16 @@ def get_user_input():
             break
         user_input.append(information)
 
-    return user_input
+    initial_message += "\n".join([f"Information: {info}" for info in user_input])
 
-def generate_wordlist(output_file="dictionary.txt"):
-    api_key = get_api_key()
+    messages = [{"role": "user", "content": initial_message}]
 
-    if api_key is None:
-        print("Error: API key not found. Please, set OPENAI_API_KEY environment variable.")
-        return
-
-    user_input = get_user_input()
-
-    openai.api_key = api_key
-
-    prompt = "Generate a wordlist with:\n"
-    for info in user_input:
-        prompt += f"Information: {info}\n"
-    
-    response = openai.Completion.create(
-        engine="davinci", 
-        prompt=prompt, 
-        max_tokens=2048
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=messages,
     )
     
-    generated_text = response.choices[0].text.strip()
+    generated_text = response.choices[0].message['content'].strip()
 
     with open(output_file, 'w') as f:
         f.write(generated_text)
