@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.1'
+VERSION = '0.9.2'
 DESCRIPTION = 'Generate dictionary with AI'
 LONG_DESCRIPTION = 'A python tool that generates a dictionary for break password. This passwords will be generated' \
                    'by a LLM (AI) and this tool will have an integration with John, The Ripper'
@@ -15,7 +15,7 @@ setup(
     long_description_content_type="text/markdown",
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
-    install_requires=['os.path', 'argparse'],  # packages that requires to project work correctly
+    install_requires=['argparse', 'openai'],  # packages that requires to project work correctly
     keywords=['python', 'dictionary', 'generate', 'llm', 'security', 'hashes', 'hash', 'cybersecurity', 'cyber',
               'hacking', ],
     classifiers=[
