@@ -18,7 +18,7 @@ def main():
      \ \_\    \ \_\ \_\  \/\_____\  \/\_____\                        
       \/_/     \/_/\/_/   \/_____/   \/_____/                        
                                                                  
-        v0.9.2 - Dictionary generator with AI
+        v0.9.2 - Automatic dictionary generator with AI
         Developed by: Rafael Rodrigues Macedo
 
     ''')
@@ -35,19 +35,9 @@ def main():
 
     generate_wordlist()
 
+    # Run John the Ripper if the user passed the -j or --john argument
     if args.john:
-        dictionary_file = 'dictionary.txt'
-        hash_file = input("Enter the path to the hash file: ")
-
-        os_name = os.name
-        if os_name == 'posix':  # Linux or MacOS
-            john_path = 'john'  # Assuming 'john' is in the PATH
-        elif os_name == 'nt':  # Windows
-            john_path = input("Enter the path to the John the Ripper executable: ")
-        else:
-            raise OSError(f"Unsupported operating system: {os_name}")
-
-        run_john(dictionary_file, hash_file, john_path)
+        run_john()
 
 if __name__ == '__main__':
     main()
