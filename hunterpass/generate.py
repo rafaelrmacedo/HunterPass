@@ -1,8 +1,5 @@
 import openai
 import os
-import itertools
-import threading
-import sys
 
 def get_api_key():
     return os.getenv('OPENAI_API_KEY')
